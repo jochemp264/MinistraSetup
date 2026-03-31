@@ -85,6 +85,9 @@ chmod 777 /var/www/.npm
 cd /var/www/html/stalker_portal/server || true
 wget -O custom.ini $REPOSITORY/custom.ini || true
 
+# Libapache
+apt install libapache2-mod-php
+
 # Build (if needed)
 cd /var/www/html/stalker_portal/deploy || true
 phing || true
