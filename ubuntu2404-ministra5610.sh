@@ -88,6 +88,14 @@ wget -O custom.ini $REPOSITORY/custom.ini || true
 # Libapache
 apt install libapache2-mod-php
 
+# Verwijder moderne phing
+rm -rf ~/.config/composer/vendor/phing
+rm -f /usr/local/bin/phing
+
+# Installeer legacy phing (werkt met jouw build.xml)
+pear channel-discover pear.phing.info
+pear install phing/phing-2.16.1
+
 # Build (if needed)
 cd /var/www/html/stalker_portal/deploy || true
 phing || true
